@@ -14,7 +14,7 @@ def expanded_date(date, length):
 def decrypt(expanded_date):
     crypt_text = ""
     for i, letter in enumerate(encrypted_text):
-        if letter.isalpha():
+        if letter != " ":
             unicode_int = ord(letter) - int(expanded_date[i])
             crypt_text += chr(unicode_int)
         else:

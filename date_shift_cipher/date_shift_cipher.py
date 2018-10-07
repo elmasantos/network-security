@@ -6,7 +6,7 @@ input_file = open(sys.argv[2], 'r')
 date = input_string.replace("/", "")
 
 def clear_text(input_file):
-    clear_text = input_file.read().replace(" ", "")
+    clear_text = input_file.read()
     return clear_text.lower()
 
 def expanded_date(date, length):
@@ -18,6 +18,8 @@ def crypt(expanded_date):
         if letter.isalpha():
             unicode_int = ord(letter) + int(expanded_date[i])
             crypt_text += chr(unicode_int)
+        else:
+            crypt_text += " "
     return crypt_text
 
 clear_text = clear_text(input_file)
